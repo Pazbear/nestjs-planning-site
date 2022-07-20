@@ -1,4 +1,4 @@
-import { Team, TEAM_USER } from 'src/team/team.entity';
+import { Team, Team_user } from 'src/team/team.entity';
 import {
   BaseEntity,
   Column,
@@ -33,7 +33,7 @@ export class User extends BaseEntity {
   @OneToMany(() => Team, (team) => team.owner, { eager: true })
   teams: Team[];
 
-  @OneToMany(() => TEAM_USER, (team_user) => team_user.user, { eager: false })
+  @OneToMany(() => Team_user, (team_user) => team_user.user, { eager: false })
   team_users: Team[];
 
   async validatePassword(password: string): Promise<boolean> {

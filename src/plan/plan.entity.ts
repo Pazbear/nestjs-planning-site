@@ -20,10 +20,10 @@ export class Plan extends BaseEntity {
   description: string;
 
   @Column()
-  start_date: Date;
+  start_date: string; //20200101
 
   @Column()
-  end_date: Date;
+  end_date: string; //20200101
 
   @CreateDateColumn()
   created_at: Date;

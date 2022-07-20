@@ -4,8 +4,6 @@ import {
   BaseEntity,
   Column,
   Entity,
-  JoinTable,
-  ManyToMany,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -23,7 +21,7 @@ export class Team extends BaseEntity {
   @ManyToOne(() => User, (user) => user.teams, { eager: false })
   owner: User;
 
-  @OneToMany(() => TEAM_USER, (team_user) => team_user.team, { eager: false })
+  @OneToMany(() => Team_user, (team_user) => team_user.team, { eager: false })
   team_users: User[];
 
   @OneToMany(() => Plan, (plan) => plan.team, { eager: true })
@@ -32,7 +30,7 @@ export class Team extends BaseEntity {
 
 @Entity({ name: 'team_user' })
 @Unique(['user', 'team'])
-export class TEAM_USER extends BaseEntity {
+export class Team_user extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

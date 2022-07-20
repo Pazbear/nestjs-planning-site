@@ -5,10 +5,10 @@ import {
 import { User } from 'src/auth/user.entity';
 import { CustomRepository } from 'src/configs/db/typeorm-ex.decorator';
 import { Repository } from 'typeorm';
-import { Team, TEAM_USER } from './team.entity';
+import { Team, Team_user } from './team.entity';
 
-@CustomRepository(TEAM_USER)
-export class TeamUserRepository extends Repository<TEAM_USER> {
+@CustomRepository(Team_user)
+export class TeamUserRepository extends Repository<Team_user> {
   async createTeamUser(user: User, team: Team): Promise<void> {
     const teamUser = this.create({ user, team });
     try {
