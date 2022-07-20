@@ -10,7 +10,6 @@ import {
   OneToMany,
 } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
-import { userInfo } from 'os';
 
 @Entity()
 @Unique(['nickname']) //데이터베이스에 같은 값이 있을 경우 에러 발생 => 에러는 repository에서 try~catch 문으로 제어 가능
